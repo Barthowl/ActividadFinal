@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Clases</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	 <h5 th:inline="text">Nombre: '[[${usuario.nombreYapellidos}]]' | Username: '[[${usuario.username}]]' 
+	 | rol: '[[${usuario.rol.rol}]]' </h5>
+	
+		<b>INICIO:</b> Clase <b>APP</b>.
+		<ul>MENÚ:
+			<li th:if="${usuario.rol.rol == 'ADMIN'}"><a href="/clase/asignaturas">Lista de asignaturas</a></li>
+			<li><a href="/clase/listado">Lista de usuarios</a></li>
+			<li><a href="/clase/h2-console" target="_new">Ir a la consola</a></li>				
+		</ul>
+	</body>
+</html>
