@@ -53,7 +53,10 @@ public class AsignaturasRestController {
 	public ResponseEntity<Asignatura> consultarPorID(@PathVariable("id") Integer id) {
 		HttpHeaders headers = new HttpHeaders();
 		try {
-			asignaturaService.consultarTodos().get(id-1).getId();
+			if(asignaturaService.consultarPorID(id) == null) {
+				headers.set("Message", "El id no existe en la lista de asignaturas");
+				return new ResponseEntity<>(headers, HttpStatus.NOT_ACCEPTABLE);	
+			}
 			Asignatura as = asignaturaService.consultarPorID(id);
 			URI newPath = new URI("/api/asignaturas/"+id);
 			headers.setLocation(newPath);
@@ -62,10 +65,6 @@ public class AsignaturasRestController {
 			return new ResponseEntity<> (as , headers, HttpStatus.CREATED);
 		}
 		catch (Exception ex) {
-			if (ex instanceof IndexOutOfBoundsException) {
-				headers.set("Message", "El id no existe en la lista de asignaturas");
-				return new ResponseEntity<>(headers, HttpStatus.NOT_ACCEPTABLE);	
-			}
 			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -97,7 +96,10 @@ public class AsignaturasRestController {
 	public ResponseEntity<Asignatura> eliminarPorID(@PathVariable("id") Integer id) {
 		HttpHeaders headers = new HttpHeaders();
 		try {
-			asignaturaService.consultarTodos().get(id-1).getId();
+			if(asignaturaService.consultarPorID(id) == null) {
+				headers.set("Message", "El id no existe en la lista de asignaturas");
+				return new ResponseEntity<>(headers, HttpStatus.NOT_ACCEPTABLE);	
+			}
 			asignaturaService.eliminarPorID(id);
 			URI newPath = new URI("/api/asignaturas/"+id);
 			headers.setLocation(newPath);
@@ -106,10 +108,6 @@ public class AsignaturasRestController {
 			return new ResponseEntity<> (headers, HttpStatus.CREATED);
 		}
 		catch (Exception ex) {
-			if (ex instanceof IndexOutOfBoundsException) {
-				headers.set("Message", "El id no existe en la lista de asignaturas");
-				return new ResponseEntity<>(headers, HttpStatus.NOT_ACCEPTABLE);	
-			}
 			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -135,7 +133,7 @@ public class AsignaturasRestController {
 				headers.set("Message", "Para modificar una asignatura, debe dar el id y debe ser superior a 0");
 				return new ResponseEntity<>(headers, HttpStatus.NOT_ACCEPTABLE);
 			}
-				asignaturaService.consultarTodos().get(id-1).getId();
+				asignaturaService.consultarTodos().get(id).getId();
 				Asignatura as = asignaturaService.modificar(asig);
 				URI newPath = new URI("/api/asignaturas/"+as.getId());
 				headers.setLocation(newPath);
