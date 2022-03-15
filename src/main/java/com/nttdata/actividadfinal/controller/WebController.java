@@ -32,7 +32,7 @@ public class WebController {
 	@GetMapping("/asignaturas")
 	//@Cacheable(value="asignatura")
 	public String listarAsig(Model model) {
-		model.addAttribute("listaAsig" , asignaturaService.listar());
+		model.addAttribute("listaAsig" , asignaturaService.consultarTodos());
 		return "asignaturas";
 	}
 	

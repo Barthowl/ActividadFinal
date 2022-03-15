@@ -18,7 +18,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired 
 	UserDetailsService servicioUsuario;
 	
-	String[] resources = new String[] { "/include/**", "/js/**", "/css/**"};
+	String[] resources = new String[] { "/include/**", "/js/**", "/css/**","/api/**"};
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	http.authorizeRequests() // autorizar peticiones post,get...
