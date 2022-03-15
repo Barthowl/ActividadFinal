@@ -27,16 +27,16 @@ public class AsignaturasRestController {
 	
 	@Autowired
 	AsignaturaService asignaturaService;
-	
-	
+
 	// consultarTodos
 	
 	@GetMapping
-	@Cacheable(value="asignaturas")
-	public ResponseEntity<List<Asignatura>> consultarTodos (@RequestBody Asignatura asig) {
+	public ResponseEntity<List<Asignatura>> consultarTodos () {
+	
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			List<Asignatura> lista = asignaturaService.consultarTodos();
+
 			URI newPath = new URI("/api/asignaturas/");
 			headers.setLocation(newPath);
 			headers.set("Message", "Asignaturas consultadas correctamente");
