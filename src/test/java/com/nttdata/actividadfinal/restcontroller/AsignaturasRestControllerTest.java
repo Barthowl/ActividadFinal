@@ -204,9 +204,7 @@ class AsignaturasRestControllerTest {
 		doThrow(new ArrayIndexOutOfBoundsException()).when(serviceMock).eliminarPorID(a1.getId());
 		
 		// WHEN
-		System.out.println(a1.getId());
 		ResponseEntity<Asignatura> re = controllerMock.eliminarPorID(a1.getId());
-		System.out.println(re.toString());
 		
 		// THEN
 		assertEquals(HttpStatus.NOT_ACCEPTABLE, re.getStatusCode(), "Excepción");
