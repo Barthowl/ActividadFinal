@@ -29,7 +29,6 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
 
 	@Override
 	public Usuario buscarPorUsername(String nombre) {
-		Usuario us = usuarioRepoJPA.findById(nombre).get();
 		return usuarioRepoJPA.findById(nombre).get();
 	}
 

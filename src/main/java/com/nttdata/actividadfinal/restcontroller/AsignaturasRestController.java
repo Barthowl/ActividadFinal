@@ -31,9 +31,11 @@ public class AsignaturasRestController {
 	// consultarTodos
 	
 	@GetMapping
+	@Cacheable(value="asignaturas")
 	public ResponseEntity<List<Asignatura>> consultarTodos () {
 	
 		try {
+			Thread.sleep(1000);
 			HttpHeaders headers = new HttpHeaders();
 			List<Asignatura> lista = asignaturaService.consultarTodos();
 
@@ -62,7 +64,7 @@ public class AsignaturasRestController {
 			headers.setLocation(newPath);
 			headers.set("Message", "Asignatura consultada correctamente con id: "+ id);
 			
-			return new ResponseEntity<> (as , headers, HttpStatus.CREATED);
+			return new ResponseEntity<> (as , headers, HttpStatus.NO_CONTENT);
 		}
 		catch (Exception ex) {
 			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -82,7 +84,7 @@ public class AsignaturasRestController {
 			headers.setLocation(newPath);
 			headers.set("Message", "Todas las asignaturas han sido borradas");
 			
-			return new ResponseEntity<> (headers, HttpStatus.CREATED);
+			return new ResponseEntity<> (headers, HttpStatus.OK);
 		}
 		catch (Exception ex) {
 			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -105,7 +107,7 @@ public class AsignaturasRestController {
 			headers.setLocation(newPath);
 			headers.set("Message", "Asignatura borrada correctamente con id: "+ id);
 			
-			return new ResponseEntity<> (headers, HttpStatus.CREATED);
+			return new ResponseEntity<> (headers, HttpStatus.OK);
 		}
 		catch (Exception ex) {
 			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);

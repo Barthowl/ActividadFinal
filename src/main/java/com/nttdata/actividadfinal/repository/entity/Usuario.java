@@ -12,8 +12,6 @@ import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.nttdata.actividadfinal.repository.entity.Rol;
-
 @Entity
 @Table
 public class Usuario implements UserDetails {

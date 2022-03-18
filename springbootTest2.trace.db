@@ -1,0 +1,32 @@
+2022-03-17 13:21:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Literatura y escritores', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]
+2022-03-17 13:21:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Literatura y escritores', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]
+2022-03-17 13:21:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Literatura y escritores', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]
+2022-03-17 13:21:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Literatura y escritores', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]
+2022-03-17 13:21:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Literatura y escritores', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]
+2022-03-17 13:21:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Literatura y escritores', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]
+2022-03-17 13:21:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Literatura y escritores', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]
+2022-03-17 13:22:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Literatura y escritores', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]

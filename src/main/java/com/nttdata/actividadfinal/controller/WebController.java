@@ -1,7 +1,6 @@
 package com.nttdata.actividadfinal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -30,7 +29,6 @@ public class WebController {
 	
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/asignaturas")
-	//@Cacheable(value="asignatura")
 	public String listarAsig(Model model) {
 		model.addAttribute("listaAsig" , asignaturaService.consultarTodos());
 		return "asignaturas";
